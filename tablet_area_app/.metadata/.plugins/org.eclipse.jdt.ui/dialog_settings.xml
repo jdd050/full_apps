@@ -3,7 +3,7 @@
 	<item key="org.eclipse.jdt.ui.last.selected.jre.kind2" value="1"/>
 	<item key="org.eclipse.jdt.ui.last.selected.execution.enviroment" value="JavaSE-20"/>
 	<item key="org.eclipse.jdt.ui.last.selected.project.jre" value="jdk-20"/>
-	<item key="org.eclipse.jdt.ui.lastextjar" value="C:\Users\joeyd\Desktop\tablet_area_app\tablet_area_app"/>
+	<item key="org.eclipse.jdt.ui.lastextjar" value="C:\Users\joeyd\OneDrive\Documents\GitHub\full_apps\tablet_area_app\external_libs"/>
 	<item key="filters_last_used" value="filter_imports;"/>
 	<item key="TypeHierarchyViewPart.hierarchyview" value="2"/>
 	<item key="TypeHierarchyViewPart.qualifiednames" value="false"/>
@@ -11,6 +11,7 @@
 	<item key="TypeHierarchyViewPart.orientation" value="3"/>
 	<item key="org.eclipse.jdt.ui.last.selected.create.moduleinfo.comments" value="false"/>
 	<item key="org.eclipse.jdt.ui.last.selected.create.moduleinfo" value="false"/>
+	<item key="UserLibraryLoadSaveDialog.size" value="480,510"/>
 	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
 		<item key="group_libraries" value="true"/>
 		<item key="layout" value="2"/>

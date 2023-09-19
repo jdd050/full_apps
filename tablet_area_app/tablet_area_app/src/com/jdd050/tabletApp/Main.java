@@ -11,15 +11,20 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.*;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.Reader;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.charset.StandardCharsets;
 
 import javax.swing.*;
 import javax.swing.filechooser.*;
 
-import org.json.simple.JSONArray;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
+import com.google.gson.Gson;
+import com.google.gson.JsonParser;
+
+
 
 public class Main implements ActionListener
 {
@@ -67,17 +72,17 @@ public class Main implements ActionListener
 	// main method
 	public static void main(String[] args) 
 	{
+		@SuppressWarnings("unused")
 		Main mainConstructor = new Main();
 	}
 
 	// actions to be performed when ActionListener is triggered (with respect to element(s))
 	@Override
-	@SuppressWarnings("unchecked")
-	public void actionPerformed(ActionEvent evt) 
+	public void actionPerformed(ActionEvent evt)
 	{
 		String command = evt.getActionCommand();
 		// if user presses the open button, show the open dialog.
-		if (command.equals("Open")) 
+		if (command.equals("Open"))
 		{
 			// create object of JFileChooser Class
 			JFileChooser file = new JFileChooser(FileSystemView.getFileSystemView().getHomeDirectory());
@@ -96,7 +101,7 @@ public class Main implements ActionListener
 		}
 		
 		// If the user presses the clear button, clear the selected file
-		if (command.equals("Clear")) 
+		if (command.equals("Clear"))
 		{
 			selectedFile.setText("No file selected.");
 		}
@@ -104,23 +109,8 @@ public class Main implements ActionListener
 		// If the user presses the Read File button, read the data from the selected JSON file
 		if (command.equals("Read File"))
 		{
-			// Create parser object to read file
-			JSONParser parser = new JSONParser();
-			
-			try (FileReader reader = new FileReader(selectedFile.getText()))
-			{
-				// Read the JSON file
-				Object obj = parser.parse(reader);
-				JSONArray data = (JSONArray) obj;
-				System.out.println(data);
-				
-			} catch (FileNotFoundException e) {
-				e.printStackTrace();
-			} catch (IOException e) {
-				e.printStackTrace();
-			} catch (ParseException e) {
-				e.printStackTrace();
-			}
+			Path filePath = Paths.get(selectedFile.getText());
+			JsonParser parser = new JsonParser();
 		}
 	}
 }
